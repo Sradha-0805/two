@@ -1,0 +1,24 @@
+                                                                        
+                                                                        GrayCode Explanation
+                                                                        
+      
+     Generation of n-bit Gray codes can be implemented through a java program. generateGrayarr() is a function with a parameter n, that generated all n bit Gray codes and prints
+      the generated codes.
+     “arr “ will  store all generated codes. arr.add(“0”) and arr(“1”)  start with one bit pattern.  Every iteration of the loop
+ 
+ for (i = 2; i < (1<<n); i = i<<1)
+   generated 2i codes from previously generated i codes. 
+
+for (j = i-1 ; j >= 0 ; j--) 
+    arr.add(arr.get(j));   
+    Enter the previously generated codes again in arr[] in reverse order.
+for (j = 0 ; j < i ; j++)
+  arr.set(j, "0" + arr.get(j));  
+Append  to the first half
+
+for (j = i ; j < 2*i ; j++) 
+  arr.set(j, "1" + arr.get(j));
+Append 1 to the second half
+Then array content will be printed. As per the user input the Graycode will be printed.
+
+                                                                  
